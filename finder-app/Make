@@ -1,0 +1,29 @@
+# Makefile for writer application
+
+# Compiler setup
+CC = gcc
+
+# Compiler flags
+CFLAGS = -Wall -Wextra
+
+# Source files
+SRC = writer.c
+
+# Object files
+OBJ = $(SRC:.c=.o)
+
+# Output binary
+TARGET = writer
+
+# Default target
+all: $(TARGET)
+
+# Build target
+$(TARGET): $(OBJ)
+    $(CC) $(CFLAGS) -o $(TARGET) $(OBJ)
+
+# Clean target
+clean:
+    rm -f $(TARGET) $(OBJ)
+
+.PHONY: all clean
